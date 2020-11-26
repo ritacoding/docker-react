@@ -10,8 +10,6 @@ script:
   - docker run -e CI=true ritaali/docker-react npm run test
 
 deploy:
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
   provider: elasticbeanstalk
   region: "us-west-2"
   app: "docker"
@@ -20,6 +18,8 @@ deploy:
   bucket_path: "docker"
   on:
     branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 
 
 
