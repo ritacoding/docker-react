@@ -9,4 +9,17 @@ before_install:
 script:
   - docker run -e CI=true ritaali/docker-react npm run test
 
+deploy:
+  access_key_id: AKIAI2KML4ICO54HIAQA
+  secret_access_key: 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
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-375998277884"
+  bucket_path: "docker"
+  on:
+    branch: master
+
+
 
